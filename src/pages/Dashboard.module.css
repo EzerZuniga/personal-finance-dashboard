@@ -1,0 +1,138 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.summaryGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--space-4);
+}
+
+.twoColumns {
+  display: grid;
+  grid-template-columns: minmax(320px, 2fr) minmax(0, 3fr);
+  gap: var(--space-6);
+  align-items: start;
+}
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3) var(--space-4);
+  margin-bottom: var(--space-4);
+}
+
+.filteredTotal {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-3);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+.filteredTotal strong {
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.settings {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+.settingInfo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.settingIcon {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: var(--radius-md);
+  background-color: var(--color-primary-soft);
+  color: var(--color-primary);
+}
+
+.settingTitle {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+}
+
+.settingText {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+.dangerButton {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: 40px;
+  padding: 0 var(--space-4);
+  border: 1px solid #fecaca;
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface);
+  color: var(--color-danger);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  transition: background-color var(--transition-fast);
+}
+
+.dangerButton:hover:not(:disabled) {
+  background-color: var(--color-danger-soft);
+}
+
+.dangerButton:disabled {
+  border-color: var(--color-border);
+  color: var(--color-text-muted);
+  opacity: 0.7;
+}
+
+@media (max-width: 1279px) {
+  .summaryGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 1199px) {
+  .twoColumns {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .page {
+    gap: var(--space-4);
+  }
+
+  .summaryGrid {
+    gap: var(--space-3);
+  }
+
+  .twoColumns {
+    gap: var(--space-4);
+  }
+
+  .filteredTotal {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 359px) {
+  .summaryGrid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

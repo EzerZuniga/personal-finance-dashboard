@@ -1,0 +1,58 @@
+.chart {
+  padding-top: var(--space-2);
+}
+
+.track {
+  display: flex;
+  gap: 2px;
+  height: 14px;
+}
+
+.segment {
+  position: relative;
+  flex-basis: 0;
+  min-width: 6px;
+  outline-offset: 3px;
+  transition: opacity var(--transition-fast);
+}
+
+.segment:first-child {
+  border-radius: 4px 0 0 4px;
+}
+
+.segment:last-child {
+  border-radius: 0 4px 4px 0;
+}
+
+.segment:only-child {
+  border-radius: 4px;
+}
+
+.dimmed {
+  opacity: 0.22;
+}
+
+.tooltip {
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  z-index: 5;
+  display: none;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 128px;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-sidebar);
+  color: var(--color-sidebar-text-active);
+  font-size: var(--font-size-xs);
+  box-shadow: var(--shadow-md);
+  transform: translateX(-50%);
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.segment:hover .tooltip,
+.segment:focus-visible .tooltip {
+  display: flex;
+}
